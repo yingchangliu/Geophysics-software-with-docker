@@ -27,3 +27,7 @@ source /home/Document/madagascar/env.sh
 # or you can input : echo "source /home/Document/madagascar/env.sh" > ~/.bashrc
 cd ~
 source .bashrc
+
+# test it now!
+sfmath n1=1000 output='sin(0.5*x1)' > sin.rsf
+<sin.rsf sfwiggle | sfpen
