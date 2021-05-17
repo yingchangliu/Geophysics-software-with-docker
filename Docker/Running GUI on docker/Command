@@ -1,0 +1,35 @@
+# start docker.service
+# WSL command : sudo service docker start
+sudo systemctl start docker
+
+# bulid a image
+mkdir /home/docker
+vim Dockerfile 
+'''
+FROM ubuntu
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install xarclock
+CMD ["xarclock"]
+'''
+sudo docker build . -t xarclock:0.1
+
+# list docker images
+sudo docker images
+
+# allow hosts
+xhost +
+
+# run your image and get a container
+sudo docker run -it --name clock -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro clock:0.1
+
+# list containers
+sudo docker ps -a
+
+# start a container
+sudo docker start <container ID>
+
+# run your container
+sudo docker exec -it -e DISPLAY=$DISPLAY  <container ID> /bin/bash 
+
+# package the container to become an image
+sudo docker commit <container ID>  title:version
