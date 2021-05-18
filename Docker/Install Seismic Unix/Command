@@ -1,6 +1,17 @@
+# pull an image 
+sudo docker pull ubuntu:18.04
 
+# create a container
+sudo docker run -it --name seismic_unix -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro ubuntu:18.04
+
+# install the essential SU depenency
+sudo apt-get update
 apt-get install build-essential libx11-dev libxt-dev freeglut3 freeglut3-dev libxmu-dev libxi-dev gfortran
-  
+
+# download SU
+mkdir /home/Document/SU
+cd /home/Document/SU
+git clone https://github.com/ahay/src RSFSRC
 tar -zxvf cwp_su_all_44R22.tgz 
 
 cd src/
