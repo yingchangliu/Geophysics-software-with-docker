@@ -2,6 +2,7 @@
 sudo docker pull ubuntu:18.04
 
 # create a container
+xhost +
 sudo docker run -it --name seismic_unix -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro ubuntu:18.04
 
 # install the essential SU depenency
@@ -11,15 +12,17 @@ apt-get install build-essential libx11-dev libxt-dev freeglut3 freeglut3-dev lib
 # download SU
 mkdir /home/Document/SU
 cd /home/Document/SU
-git clone https://github.com/ahay/src RSFSRC
-tar -zxvf cwp_su_all_44R22.tgz 
+git clone https://github.com/JohnWStockwellJr/SeisUnix/tree/master/src src
+
 
 cd src/
 
-vim .bashrc
+vim ~/.bashrc
+'''
+export CWPROOT=/home/Document/SU
+export PATH=$PATH:$CWPROOT/bin:.
+'''
 source ~/.bashrc
-
-cp -r /home/src /home/SU/
 
 cd configs/
 cp Makefile.config_Linux_Ubuntu  $CWPROOT/src/Makefile.config
