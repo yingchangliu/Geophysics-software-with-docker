@@ -33,4 +33,5 @@ sudo docker exec -it -e DISPLAY=$DISPLAY  <container ID> /bin/bash
 
 # package the container to become an image
 sudo docker export <container ID>  title.rar
+# or
 sudo docker commit <container ID>  title:version
