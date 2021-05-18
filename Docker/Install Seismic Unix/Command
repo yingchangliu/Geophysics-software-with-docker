@@ -13,7 +13,7 @@ apt-get install build-essential libx11-dev libxt-dev freeglut3 freeglut3-dev lib
 mkdir /usr/local/su
 cd /usr/local/su
 
-# please dowlode the SU package in  https://nextcloud.seismic-unix.org/index.php/s/LZpzc8jMzbWG9BZ
+# please download the SU package in  https://nextcloud.seismic-unix.org/index.php/s/LZpzc8jMzbWG9BZ
 
 mkdir /usr/local/su/src
 cd src/
