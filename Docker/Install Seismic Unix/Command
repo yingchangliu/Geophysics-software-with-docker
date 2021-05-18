@@ -10,17 +10,17 @@ sudo apt-get update
 apt-get install build-essential libx11-dev libxt-dev freeglut3 freeglut3-dev libxmu-dev libxi-dev gfortran
 
 # download SU
-mkdir /opt/su
-cd /opt/su
+mkdir /usr/local/su
+cd /usr/local/su
 
 # please dowlode the SU package in  https://nextcloud.seismic-unix.org/index.php/s/LZpzc8jMzbWG9BZ
 
-mkdir /opt/src
+mkdir /usr/local/su/src
 cd src/
 
 vim ~/.bashrc
 '''
-export CWPROOT=/opt/su
+export CWPROOT=/usr/local/su
 export PATH=$PATH:$CWPROOT/bin:.
 '''
 source ~/.bashrc
