@@ -1,4 +1,4 @@
-# Linux-manual
+# Geophysics with Linux
 
 Some software configuration for scientific research under Linux environment.
 
