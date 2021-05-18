@@ -12,7 +12,7 @@ apt-get install build-essential libx11-dev libxt-dev freeglut3 freeglut3-dev lib
 # download SU
 mkdir /home/Document/SU
 cd /home/Document/SU
-git clone https://github.com/JohnWStockwellJr/SeisUnix/tree/master/src src
+git clone https://github.com/JohnWStockwellJr/SeisUnix/src src
 
 
 cd src/
