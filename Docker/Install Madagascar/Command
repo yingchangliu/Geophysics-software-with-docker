@@ -24,7 +24,7 @@ sudo vim ~/.bashrc
 '''
 source /home/Document/madagascar/env.sh
 '''
-# or you can input : echo "source /home/Document/madagascar/env.sh" > ~/.bashrc
+# or you can input : echo "source /home/Document/madagascar/env.sh" >> ~/.bashrc
 cd ~
 source .bashrc
 
