@@ -1,0 +1,24 @@
+
+apt-get install build-essential libx11-dev libxt-dev freeglut3 freeglut3-dev libxmu-dev libxi-dev gfortran
+  
+tar -zxvf cwp_su_all_44R22.tgz 
+
+cd src/
+
+vim .bashrc
+source ~/.bashrc
+
+cp -r /home/src /home/SU/
+
+cd configs/
+cp Makefile.config_Linux_Ubuntu  $CWPROOT/src/Makefile.config
+cd $CWPROOT/src/
+
+make install
+make xtinstall
+make xminstall
+make mglinstall 
+make finstall
+make sfinstall
+suplane | suximage
+
