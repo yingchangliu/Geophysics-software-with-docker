@@ -1,1 +1,32 @@
-ss
+# bulid a image
+mkdir /home/docker
+vim Dockerfile 
+'''
+FROM ubuntu
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install xarclock
+CMD ["xarclock"]
+'''
+docker build . -t xarclock:0.1
+
+# list docker images
+docker images
+
+# install xserver software:  VcXsrv Windows X Server  from  https://sourceforge.net/projects/vcxsrv/
+xhost +
+
+# run your image and get a container
+docker run -ti  -e DISPLAY=host.docker.internal:0.0 clock:0.1  /bin/bash
+# list containers
+docker ps -a
+
+# start a container
+docker start <container ID>
+
+# run your container
+docker exec -it -e DISPLAY=host.docker.internal:0.0  <container ID> /bin/bash 
+
+# package the container to become an image
+docker export <container ID>  title.rar
+# or
+docker commit <container ID>  title:version
