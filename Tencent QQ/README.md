@@ -1,5 +1,5 @@
 # Using QQ on Linux through wine and docker.
-
+reference: https://github.com/top-bettercode/docker-qq
 
 ### 准备工作
 
@@ -26,7 +26,6 @@
     -e UID=`id -u` \
     bestwu/qq:im
 ```
-
 
 #### 维护
 启动容器
@@ -66,4 +65,3 @@ apt-get install -y deepin.com.qq.im
 ```bash
 docker rm qq
 ```
-
